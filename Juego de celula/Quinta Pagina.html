@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referencias Bibliográficas</title>
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background: linear-gradient(to right, #f6d365, #fda085);
+            text-align: center;
+            color: #333;
+            padding: 50px;
+        }
+        .container {
+            background: #fff5e1;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            max-width: 800px;
+        }
+        h1 {
+            color: #e74c3c;
+            text-shadow: 2px 2px 2px black;
+        }
+        p {
+            font-size: 14px;
+            text-align: left;
+            margin: 10px 0;
+        }
+        a {
+            color: #d35400;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .button-container {
+            a {
+        text-decoration: none; /* Elimina el subrayado de todos los enlaces */
+        }
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 15px 20px;
+            font-size: 14px;
+            background: linear-gradient(to bottom, #ff4757, #e84118);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-shadow: 2px 2px 2px black;
+            transition: transform 0.1s ease-in-out, box-shadow 0.2s;
+            display: inline-block;
+            margin: 10px;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="The Walking Dead Original Soundtrack - Theme Song [v5ISBJc1wFk].mp3" type="audio/mp3">
+        Tu navegador no soporta audio HTML5.
+    </audio>
+
+    <div class="container">
+        <h1>📚 Referencias Bibliográficas 📚</h1>
+        
+        <p>📖 Concepto.de. (s.f.). <strong>Teoría celular: qué es, postulados y principios.</strong> Recuperado el 21 de marzo de 2025, de 
+            <a href="https://concepto.de/teoria-celular/" target="_blank">Ver fuente</a>
+        </p>
+
+        <p>📖 Teoría Online. (s.f.). <strong>Historia de la teoría celular.</strong> Recuperado el 21 de marzo de 2025, de 
+            <a href="https://teoriaonline.com/teoria-celular-historia/" target="_blank">Ver fuente</a>
+        </p>
+
+        <p>📖 BioBook. (s.f.). <strong>Los cuatro principios de la teoría celular.</strong> Recuperado el 21 de marzo de 2025, de 
+            <a href="https://biobook.es/cuatro-principios-de-la-teoria-celular/" target="_blank">Ver fuente</a>
+        </p>
+
+        <p>📖 LaHistoria.info. (s.f.). <strong>Línea del tiempo de la historia de la teoría celular.</strong> Recuperado el 21 de marzo de 2025, de 
+            <a href="https://lahistoria.info/linea-del-tiempo-de-historia-de-la-teoria-celular/" target="_blank">Ver fuente</a>
+        </p>
+
+        <p>📖 Teoría Online. (s.f.). <strong>Principios fundamentales de la teoría celular.</strong> Recuperado el 21 de marzo de 2025, de 
+            <a href="https://teoriaonline.com/principios-fundamentales-teoria-celular/" target="_blank">Ver fuente</a>
+        </p>
+
+        <div class="button-container">
+            <a href="Juego de celula.html" class="btn">🏠 Volver al Inicio</a>
+            <a href="Cuarta Pagina.html" class="btn">🔙 Ir a Teoría Celular</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var audio = document.getElementById("backgroundMusic");
+            audio.play().catch(error => {
+                console.log("El navegador bloqueó la reproducción automática:", error);
+            });
+        });
+    </script>
+
+</body>
+</html>

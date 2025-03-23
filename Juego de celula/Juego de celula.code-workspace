@@ -1,0 +1,10 @@
+{
+    "folders": [
+        {
+            "path": "Juego de celula"
+        }
+    ],
+    "settings": {
+        "liveServer.settings.port": 5501
+    }
+}

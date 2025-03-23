@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoría Celular</title>
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background: linear-gradient(to right, #a8d5ba, #f8b500);
+            text-align: center;
+            color: #4a2800;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: #fff8dc;
+            border-radius: 15px;
+            padding: 30px;
+            width: 80%;
+            margin: auto;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+            border: 4px solid #e67e22;
+        }
+        h1 {
+            color: #d35400;
+            text-shadow: 2px 2px 0px #ffcc80;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to bottom, #ff7043, #e64a19);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            margin-top: 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+            text-shadow: 2px 2px 2px black;
+            transition: transform 0.1s ease-in-out, box-shadow 0.2s;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="The Walking Dead Original Soundtrack - Theme Song [v5ISBJc1wFk].mp3" type="audio/mp3">
+        Tu navegador no soporta audio HTML5.
+    </audio>
+
+    <div class="container">
+        <h1>📋 La Teoría Celular</h1>
+        <p>La Teoría Celular es un pilar fundamental de la biología, estableciendo que:</p>
+        <ul>
+            <li>⚛️ Todos los seres vivos están formados por una o más células.</li>
+            <li>⚙️ La célula es la unidad estructural y funcional de los organismos.</li>
+            <li>⏳ Todas las células provienen de otras células preexistentes.</li>
+        </ul>
+        
+        <h2>📈 Ampliaciones Modernas</h2>
+        <p>Con los avances en biología molecular, la teoría se ha expandido:</p>
+        <ul>
+            <li>🧬 La célula contiene ADN, la información genética hereditaria.</li>
+            <li>⚡ Todas las funciones vitales ocurren dentro de las células.</li>
+            <li>🔬 Los microorganismos unicelulares también cumplen estos principios.</li>
+        </ul>
+        
+        <h2>🔬 Descubrimientos Clave</h2>
+        <p>Algunos científicos esenciales en la formulación de la Teoría Celular:</p>
+        <ul>
+            <li>1665 - <b>Robert Hooke</b>: Observó las primeras células en corcho.</li>
+            <li>1670 - <b>Anton van Leeuwenhoek</b>: Descubrió células vivas con su microscopio.</li>
+            <li>1838 - <b>Matthias Schleiden</b>: Determinó que las plantas están hechas de células.</li>
+            <li>1839 - <b>Theodor Schwann</b>: Extendió el concepto a los animales.</li>
+            <li>1855 - <b>Rudolf Virchow</b>: "Toda célula proviene de otra célula".</li>
+        </ul>
+        
+        <h2>👩‍🏫 Impacto en la Ciencia y Medicina</h2>
+        <p>La Teoría Celular ha revolucionado:</p>
+        <ul>
+            <li>⚕️ La medicina: desarrollo de vacunas y antibióticos.</li>
+            <li>🧪 La biotecnología: manipulación celular en tratamientos y clonación.</li>
+            <li>☣️ La microbiología: comprensión de bacterias, virus y otros microorganismos.</li>
+        </ul>
+    </div>
+        <a href="Juego de celula.html" class="btn">🏠 Volver al Inicio</a>
+        <a href="Quinta Pagina.html" class="btn">📋 Referencias</a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var audio = document.getElementById("backgroundMusic");
+            audio.play().catch(error => {
+                console.log("El navegador bloqueó la reproducción automática:", error);
+            });
+        });
+    </script>
+
+</body>
+</html>
