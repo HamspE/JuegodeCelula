@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de la Célula</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        body {
+
+    a {
+        text-decoration: none; /* Elimina el subrayado de todos los enlaces */
+    }
+
+    .boton-volver {
+    position: absolute; /* Permite posicionarlo en cualquier lugar */
+    top: 680px; /* Distancia desde la parte superior */
+    left: 900px; /* Distancia desde la izquierda */
+    padding: 15px 20px;
+    font-size: 14px;
+    background: linear-gradient(to bottom, #ff4757, #e84118);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-shadow: 2px 2px 2px black;
+    transition: transform 0.1s ease-in-out, box-shadow 0.2s;
+
+}
+
+.teoria-volver {
+    position: absolute; /* Permite posicionarlo en cualquier lugar */
+    top: 680px; /* Distancia desde la parte superior */
+    left: 1065px; /* Distancia desde la izquierda */
+    padding: 15px 20px;
+    font-size: 14px;
+    background: linear-gradient(to bottom, #ff4757, #e84118);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-shadow: 2px 2px 2px black;
+    transition: transform 0.1s ease-in-out, box-shadow 0.2s;
+}
+
+.teoria-volver:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(255, 71, 87, 0.5);
+}
+
+
+
+.boton-teoria:hover {
+    background-color: #45a049;
+}
+
+
+.boton-volver:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 71, 87, 1);
+}
+
+
+            .boton-creditos {
+    position: absolute;
+    top: 600px;
+    left: 355px;
+    padding: 10px 15px;
+    font-size: 12px;
+    background: linear-gradient(to bottom, #f1c40f, #f39c12);
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(243, 156, 18, 0.8);
+    transition: transform 0.1s ease-in-out, box-shadow 0.2s;
+}
+
+.boton-creditos:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(243, 156, 18, 1);
+}
+
+            
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+            background: linear-gradient(45deg, #48c9b0, #f39c12);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+        }
+
+        .contenedor {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            max-width: 1100px;
+            width: 90%;
+        }
+
+        .fondo-celula {
+            width: 500px;
+            height: auto;
+            opacity: 0.95;
+        }
+
+        .inicio {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 40px;
+            border: 5px solid #f39c12;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(243, 156, 18, 0.8);
+            max-width: 450px;
+            text-transform: uppercase;
+            color: #2c3e50;
+        }
+        
+        h1 {
+            color: #d35400;
+            font-size: 18px;
+            text-shadow: 2px 2px 4px rgba(211, 84, 0, 0.8);
+        }
+        
+        .boton {
+            display: inline-block;
+            padding: 15px 25px;
+            margin-top: 15px;
+            font-size: 16px;
+            color: white;
+            background: linear-gradient(to bottom, #e74c3c, #c0392b);
+            border: 4px solid #d35400;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            text-shadow: 2px 2px 2px black;
+            box-shadow: 0 0 15px rgba(231, 76, 60, 0.8);
+            transition: transform 0.1s ease-in-out, box-shadow 0.2s, background 0.3s;
+        }
+
+        .boton:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px rgba(231, 76, 60, 1);
+            background: linear-gradient(to bottom, #c0392b, #922b21);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .contenido {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            font-family: Arial, sans-serif;
+            display: none; /* Oculto hasta que se muestre */
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            margin: 0;
+            padding-top: 20px;
+            position: relative;
+        }
+
+        .center-image {
+            max-width: 80%;
+            height: auto;
+            position: relative;
+        }
+
+        .parte {
+            position: absolute;
+            background-color: white;
+            padding: 5px;
+            border: 1px solid black;
+            cursor: pointer;
+            font-size: 10px;
+            text-transform: uppercase;
+
+            
+        }
+
+        #mitocondria { top: 13%; left: 40%; }
+        #nucleo { top: 14%; left: 56%; }
+        #citoplasma { top: 72%; left: 32%; }
+        #golgi { top: 81%; left: 36%; }
+        #Citoesqueleto { top: 13%; left: 47%; }
+        #Ribosomas { top: 17.8%; left: 35%; }
+        #Centriolo { top: 24%; left: 34%; }
+        #Membrana_Plasmática { top: 31%; left: 27%; }
+        #nucléolo { top: 81%; left: 55%; }
+        #Peroxisoma { top: 78%; left: 61%; }
+        #Reticulo_Endoplasmático { top: 17%; left: 61%; }
+
+        .definicion {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #d35400;
+            max-width: 80%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid #f39c12;
+            box-shadow: 0 0 10px rgba(243, 156, 18, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="The Walking Dead Original Soundtrack - Theme Song [v5ISBJc1wFk].mp3" type="audio/mp3">
+        Tu navegador no soporta audio HTML5.
+    </audio>
+
+
+    <a href="Tercera pagina.html" class="boton-creditos">📜 Créditos</a>
+
+
+    <div class="contenedor" id="pantalla-inicial">
+        <img src="https://media.baamboozle.com/uploads/images/532461/1636494552_38398_gif-url.gif" alt="Célula animada" class="fondo-celula">
+        <div class="inicio">
+            <h1>🔬 ¡Explora la Célula! 🧫</h1>
+            <p>Selecciona las partes de la célula para ver su definición.</p>
+            <button class="boton" onclick="mostrarPantalla()">🚀 Iniciar Análisis</button>
+        </div>
+    </div>
+
+    <div class="contenido" id="pantalla-celula">
+        <h1>Partes de la Célula</h1>
+        <div style="position: relative;">
+            <button class="boton-volver" onclick="volverAPrimeraPagina()">🏠 Volver al inicio</button>
+            <a href="Cuarta Pagina.html" class="teoria-volver">📖 Teoría Celular</a>
+            <img src="celula.jpg" alt="Imagen de célula" class="center-image">
+            <div class="parte" id="mitocondria" onclick="mostrarDefinicion('mitocondria')">Mitocondria</div>
+            <div class="parte" id="nucleo" onclick="mostrarDefinicion('nucleo')">Núcleo</div>
+            <div class="parte" id="citoplasma" onclick="mostrarDefinicion('citoplasma')">Citoplasma</div>
+            <div class="parte" id="golgi" onclick="mostrarDefinicion('golgi')">Aparato de Golgi</div>
+            <div class="parte" id="Citoesqueleto" onclick="mostrarDefinicion('Citoesqueleto')">Citoesqueleto</div>
+            <div class="parte" id="Ribosomas" onclick="mostrarDefinicion('Ribosomas')">Ribosomas</div>
+            <div class="parte" id="Centriolo" onclick="mostrarDefinicion('Centriolo')">Centriolo</div>
+            <div class="parte" id="Membrana_Plasmática" onclick="mostrarDefinicion('Membrana_Plasmática')">Membrana Plasmática</div>
+            <div class="parte" id="nucléolo" onclick="mostrarDefinicion('nucléolo')">Nucléolo</div>
+            <div class="parte" id="Peroxisoma" onclick="mostrarDefinicion('Peroxisoma')">Peroxisoma</div>
+            <div class="parte" id="Reticulo_Endoplasmático" onclick="mostrarDefinicion('Reticulo_Endoplasmático')">Reticulo Endoplasmático</div>
+        </div>
+        <p class="definicion hidden" id="definicion"></p>
+    </div>
+
+    <script>
+        function mostrarPantalla() {
+            document.getElementById('pantalla-inicial').style.display = 'none';
+            document.getElementById('pantalla-celula').style.display = 'flex';
+        }
+
+         function volverAPrimeraPagina() {
+            document.getElementById('pantalla-celula').style.display = 'none'; // Oculta la segunda página
+            document.getElementById('pantalla-inicial').style.display = 'flex'; // Muestra la primera página
+        }
+
+        function moverBoton(top, left) {
+    document.documentElement.style.setProperty('--boton-top', top + 'px');
+    document.documentElement.style.setProperty('--boton-left', left + 'px');
+}
+
+              // Diccionario de definiciones
+        let definiciones = {
+            "mitocondria": "La mitocondria es la encargada de producir energía en la célula a través de la respiración celular.",
+            "nucleo": "El núcleo es el centro de control de la célula donde se almacena el ADN y se regulan las funciones celulares.",
+            "citoplasma": "El citoplasma es la sustancia gelatinosa donde se encuentran los orgánulos celulares.",
+            "golgi": "El aparato de Golgi se encarga de modificar, empacar y distribuir proteínas y lípidos.",
+            "Citoesqueleto": "El citoesqueleto es una red de filamentos que da soporte estructural y facilita el movimiento de la célula.",
+            "Ribosomas": "El ribosoma es la estructura encargada de sintetizar proteínas a partir de la información genética del ARN mensajero.",
+            "Centriolo": "Es una estructura cilíndrica que participa en la organización del citoesqueleto y en la división celular, ayudando a formar el huso mitótico.",
+            "Membrana_Plasmática": "Es una barrera semipermeable que rodea la célula, regulando el intercambio de sustancias entre el interior y el exterior.",
+            "nucléolo": "El nucléolo es una estructura dentro del núcleo celular encargada de la producción y ensamblaje de los ribosomas, esenciales para la síntesis de proteínas.",
+            "Peroxisoma": "El peroxisoma es un orgánulo celular encargado de la desintoxicación celular y la degradación de ácidos grasos mediante enzimas oxidativas.",
+            "Reticulo_Endoplasmático": "El Retículo endoplasmático es un orgánulo que participa en la síntesis de proteínas y lípidos. Se divide en rugoso (con ribosomas) y liso (sin ribosomas).",
+        };
+
+        function mostrarDefinicion(parte) {
+            let mensaje = document.getElementById("definicion");
+            mensaje.innerText = definiciones[parte];
+            mensaje.classList.remove("hidden");
+        }
+    </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var audio = document.getElementById("backgroundMusic");
+        audio.play().catch(error => {
+            console.log("El navegador bloqueó la reproducción automática:", error);
+        });
+    });
+</script>
+</body>
+</html>
